@@ -4,6 +4,10 @@ import { iDocumentMetadataTag } from "./models/document-metadata-tag";
 export class HtmlDocumentMetadataReader implements iDocumentMetadataReader {
 
     readTagsFromDocument(htmlDocument: string): iDocumentMetadataTag[] {
+        if (typeof htmlDocument !== 'string') {
+            throw new Error('HtmlDocument is not a string!');
+        }
+
         const head = this.extractHead(htmlDocument);
         const metaTags = this.extractRawMetaTags(head);
         const tags = metaTags.map(tag => this.processRawMetaTag(tag));
