@@ -77,3 +77,8 @@ The result will have this schema:
     }
 ]
 ```
+
+This can be formatted into a key-value pair object:
+```javascript
+const keyValueObj = DocumentMetadataFormatter.toDictionary(metaTagsAr);
+```
