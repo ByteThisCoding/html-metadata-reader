@@ -7,6 +7,8 @@
 
 Node JS solution to read all meta tags and their values from an HTML document. This is useful in cases where we need to read metadata from a document on a Node Js server, where we cannot do a document query. Unlike other solutions, this will retrieve all meta tag information, including arbitrary/non-standard tags.
 
+**For a demo + how to use:** https://bytethisstore.com/articles/pg/html-document-metadata
+
 ## Usage
 ```javascript
 
