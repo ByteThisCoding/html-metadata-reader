@@ -80,7 +80,9 @@ export class HtmlDocumentMetadataReader implements iDocumentMetadataReader {
 
         //split into the key + value pairs
         const splitPairs = 
-            metaTagRaw.match(/.*?=\s*(?<!\\)(?:\\{2})*("|').*?(?<!\\)(?:\\{2})*("|')/g) || [];
+            //this regex was modified from something found online
+            //it will match pairs of "" and '' (seperately) after an equal sign and skip over escaped versions
+            metaTagRaw.match(/((.*?=\s*(?<!\\)(?:\\{2})*(").*?(?<!\\)(?:\\{2})*("))|.*?=\s*(?<!\\)(?:\\{2})*(').*?(?<!\\)(?:\\{2})*('))/g) || [];
          //split into key="" value="" strings
 
         //if it is a key value only, handle special case
